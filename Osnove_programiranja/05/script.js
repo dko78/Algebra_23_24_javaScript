@@ -70,6 +70,9 @@ nullish = undefined ?? "desna";
 console.log(nullish);
 
 //&& će vratiti prvu falsy ili zadnju thruthy
+//Logical AND (&&) evaluates operands from left to right, returning immediately with the value of the first falsy operand it encounters;
+//if all values are truthy, the value of the last operand is returned.
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
 let x;
 x = 10 && 20;
 
@@ -79,7 +82,7 @@ let lista = [];
 
 console.log(lista[0]);
 
-lista = [2, 3];
+//lista = [2, 3];
 
 lista.length > 0 && console.log(lista[0]);
 
