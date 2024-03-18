@@ -17,9 +17,9 @@ console.log(laz || laz || istina);
 //stranae vrijednost null ili Undefined
 let nullish;
 
-nullish = 10 ?? 20; //vraća 10
-nullish = null ?? 20;
+//nullish = 10 ?? 20; //vraća 10
+//nullish = null ?? 20;
 nullish = "" ?? "desna";
-nullish = null ?? "desna";
+//nullish = null ?? "desna";
 
 console.log(nullish);
