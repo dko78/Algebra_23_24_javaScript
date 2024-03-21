@@ -1,0 +1,76 @@
+"use strict";
+/*
+  Zadatak 1
+
+Recimo da imamo 7900 lovaca u Hrvatskoj. Izračunaj koji postotak tih lovaca
+dolazi iz Središnje hrvatske - nazovimo const brojLovaca1 (3840 lovaca),
+koliko iz Istre (brojLovaca2 = 500 lovaca) i koliko iz Dalmacije (brojLovaca3 = 1440 lovaca)
+
+*/
+
+const popLovacaHrv = 7900;
+
+const brojLovaca1 = 3840;
+const brojLovaca2 = 500;
+const brojLovaca3 = 1440;
+
+const postotakLovaca = (ukupno, brojLovaca) => {
+  return (brojLovaca / ukupno) * 100;
+};
+
+console.log(popLovacaHrv);
+
+console.log(postotakLovaca(popLovacaHrv, brojLovaca1));
+console.log(postotakLovaca(popLovacaHrv, brojLovaca2));
+console.log(postotakLovaca(popLovacaHrv, brojLovaca3));
+
+/*
+Zadatak 2
+
+Na svijetu ima 10000 profesionalnih igrača stolnog tenisa. Hrvatska ima 10,
+Kina 3441 i USA 332. Izračunajte postotak tih igrača u odnosu na sve profesionalne igrače
+i onda ih i ispišite, na način da definirate dvije funkcije, prvu koja će računati postotak
+i drugu u koju ćemo ubaciti taj postotak i koja će imati 2 parametra - zemlja i populacija.
+Nakon toga ispišite sve 3 vrijednosti koristeći rečenicu:
+`${zemlja} ima ${populacija} lovaca što je oko ${postotak}% svijeta`
+*/
+
+const postotak = (ukupno, broj) => {
+  return (broj / ukupno) * 100;
+};
+
+const ukIgraca = 10000;
+const igraHR = 10;
+const igraKina = 3441;
+const igraUsa = 332;
+
+let postotakHR = postotak(ukIgraca, igraHR);
+let postotakKina = postotak(ukIgraca, igraKina);
+let postotakUsa = postotak(ukIgraca, igraUsa);
+
+console.log(postotakHR);
+
+const ispis = function (zemlja, populacija) {
+  if (zemlja == "HR") {
+    return `${zemlja} ima ${populacija} igrača što je oko ${postotak(
+      ukIgraca,
+      igraHR
+    )} svijeta}`;
+  }
+  if (zemlja == "KINA") {
+    return `${zemlja} ima ${populacija} igrača što je oko ${postotak(
+      ukIgraca,
+      igraKina
+    )} svijeta}`;
+  }
+  if (zemlja == "USA") {
+    return `${zemlja} ima ${populacija} igrača što je oko ${postotak(
+      ukIgraca,
+      igraUsa
+    )} svijeta}`;
+  }
+};
+
+console.log(ispis("HR", igraHR));
+console.log(ispis("KINA", igraKina));
+console.log(ispis("USA", igraUsa));
