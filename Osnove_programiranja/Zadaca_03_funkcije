@@ -51,26 +51,30 @@ let postotakUsa = postotak(ukIgraca, igraUsa);
 console.log(postotakHR);
 
 const ispis = function (zemlja, populacija) {
+  let vratiIspis;
   if (zemlja == "HR") {
-    return `${zemlja} ima ${populacija} igrača što je oko ${postotak(
+    vratiIspis = `${zemlja} ima ${populacija} igrača što je oko ${postotak(
       ukIgraca,
       igraHR
     )} svijeta}`;
-  }
-  if (zemlja == "KINA") {
-    return `${zemlja} ima ${populacija} igrača što je oko ${postotak(
+  } else if (zemlja == "KINA") {
+    vratiIspis = `${zemlja} ima ${populacija} igrača što je oko ${postotak(
       ukIgraca,
       igraKina
     )} svijeta}`;
-  }
-  if (zemlja == "USA") {
-    return `${zemlja} ima ${populacija} igrača što je oko ${postotak(
+  } else if (zemlja == "USA") {
+    vratiIspis = `${zemlja} ima ${populacija} igrača što je oko ${postotak(
       ukIgraca,
       igraUsa
     )} svijeta}`;
+  } else {
+    vratiIspis = `Upisali ste zemlju: ${zemlja} koja nije prepoznata`;
   }
+
+  return vratiIspis;
 };
 
 console.log(ispis("HR", igraHR));
 console.log(ispis("KINA", igraKina));
 console.log(ispis("USA", igraUsa));
+console.log(ispis("usa", igraUsa));
