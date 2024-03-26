@@ -78,3 +78,36 @@ console.log(ispis("HR", igraHR));
 console.log(ispis("KINA", igraKina));
 console.log(ispis("USA", igraUsa));
 console.log(ispis("usa", igraUsa));
+/*
+Zadatak 3
+
+Imamo 2 tima, koji su igrali međusobno 6 puta i svaki ima po 3 pobjede.
+Želimo izračunati prosjek golova u svih 6 utakmica za svaku ekipu koristeći arrow funkciju.
+Tim pobjeđuje jedino ako ima u prosjeku više golova od drugog tima.
+Napravite arrow funkciju kako bi napravili kalkulaciju prosjeka.
+Napravite funkciju koja uzima prosjek ekipa i ispisuje pobjednika u konzoli skupa
+sa ispisom prosjeka golova obje ekipe npr. Real je u prosjeku zabio 4 gola, a Barcelona 1.
+Možete iskoristi if-else petlju kako bi složili ispis.
+
+primjer:
+Barca : 2, 3, 3, 3, 4, 1
+Real : 1, 4, 1, 5, 0, 5
+*/
+
+const prosjek = (a, b, c, d, e, f) => (a + b + c + d + e + f) / 6;
+const prosjekBarca = prosjek(2, 3, 3, 3, 4, 1);
+const prosjekReal = prosjek(1, 4, 2, 5, 0, 5);
+
+const zadatak3 = (prosjekBarca, prosjekReal) => {
+  if (prosjekBarca > prosjekReal) {
+    console.log(
+      `Barca je pobijedila jer ima prosjek ${prosjekBarca} veći prodjek Real ${prosjekReal}`
+    );
+  } else if (prosjekBarca < prosjekReal) {
+    `Real je pobijedio jer ima prosjek ${prosjekReal} veći prosjek Barca ${prosjekBarca}`;
+  } else {
+    console.log("Rezultat je izjednačen");
+  }
+};
+
+zadatak3(prosjekBarca, prosjekReal);
