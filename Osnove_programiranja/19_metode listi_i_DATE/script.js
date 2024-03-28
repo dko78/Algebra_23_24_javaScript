@@ -114,3 +114,36 @@ const suma4 = kosarica.reduce((accumulator, item) => {
 }, 0);
 
 console.log(suma4);
+
+//regex prouči
+
+//DATE
+
+let x = new Date();
+console.log(
+  x.getHours(),
+  x.getMinutes(),
+  x.getFullYear(),
+  x.getMonth() + 1, //koja glupost
+  x.getDay(), //dan kreće od nedjelje = 0, subpta je 6
+  x.getTime()
+);
+//za HR vrijesnot
+
+x = Intl.DateTimeFormat("hr-HR").format(x);
+console.log(x, typeof x);
+
+//datm + 10
+// Get current date
+let date1 = new Date();
+// Add five days to current date
+date1.setDate(date1.getDate() + 10);
+console.log(date1);
+
+// Specific date
+var date = new Date("February 28, 2024 16:45:30");
+
+// Add ten days to specified date
+date.setDate(date.getDate() + 2);
+
+console.log(date);
