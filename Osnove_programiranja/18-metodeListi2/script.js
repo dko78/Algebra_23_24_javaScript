@@ -94,7 +94,7 @@ console.log(ukCijena);
 // moze i reduce metoda
 const totalCijena = lista.reduce((accumulator, objekt) => {
   return (accumulator += objekt.cijena);
-}, 0);
+}, 0); // u prvoj iteraciji vrijednost accumulatora je 0, tozanči taj parametar
 
 console.log(totalCijena);
 
