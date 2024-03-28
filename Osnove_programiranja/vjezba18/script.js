@@ -1,7 +1,7 @@
 "use strict";
 
 /* 
-1) FOREACH metoda
+FOREACH metoda
 
 forEach metoda prolazi listu član po član (svaki član ulazi kao parametar) i na njemu radi određene izmjene. Te izmjenjene članove
 možemo spremiti u neku novu listu.
@@ -29,7 +29,7 @@ const useri = [
 
 useri.forEach((user) => console.log(user.ime));
 
-//  2) filter metode za razliku od foreach vraća vrijednost
+//filter metode za razliku od foreach vraća vrijednost
 
 const rijeci = ["prozor", "apartman", "lopata", "zvrk"];
 //samo one kojiimaju više od 6 znakova
@@ -74,57 +74,4 @@ const limunzine = auti.filter((auto) => {
   return auto.kategorija === "limuzina";
 });
 
-// 3) metoda map, vraća vrijednost
-const lista = [
-  { proizvod: "Bicikl", cijena: 1500 },
-  { proizvod: "Frižider", cijena: 2500 },
-  { proizvod: "Perilica", cijena: 2000 },
-  { proizvod: "Romobil", cijena: 800 },
-  { proizvod: "Automobil", cijena: 60000 },
-  { proizvod: "Tipkovnica", cijena: 80 },
-];
-//todo moj zadatak sume
-let ukCijena = 0;
-
-lista.forEach((objekt) => {
-  ukCijena += objekt.cijena;
-});
-console.log(ukCijena);
-
-// moze i reduce metoda
-const totalCijena = lista.reduce((accumulator, objekt) => {
-  return (accumulator += objekt.cijena);
-}, 0);
-
-console.log(totalCijena);
-
-// želim samo proizvode
-
-const listaProizvoda = lista.map((objekt) => objekt.proizvod);
-
-console.log(listaProizvoda);
-
-// 4.) FIND metoda
-//iz postojeće liste pronađe neki element
-//find vraća samo prvu vrijednost, a filter vraća sve vrijednosti koje zafovoljavaju uvijet
-const findLista = lista.find((auto) => auto.proizvod === "Automobil");
-//vraća objekt s tim
-console.log(findLista);
-
-// 5.)SOME metoda, vraća boolean kao ILI tj. ||
-//ima li koji proizvod cijenu manju od 150
-
-const manjaCijena = lista.some((objekt) => objekt.cijena <= 150);
-console.log(manjaCijena);
-
-// 6.) EVERY metoda kao I, tj.&&
-
-const manjaCIjena2 = lista.every((objekt) => objekt.cijena <= 150);
-console.log(manjaCIjena2);
-
-//7.INCLUDES da li lista ima određene vrijednosti
-
-const listaBrojeva = [1, 2, 3, 4, 5, 6];
-
-const inclBroj = listaBrojeva.includes(100);
-console.log(inclBroj);
+// metoda map
