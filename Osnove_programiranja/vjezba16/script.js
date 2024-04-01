@@ -20,9 +20,9 @@ console.log(osoba);
 
 const brojevi = [1, 2, 3, 4, 5, 6];
 
-const [broj1, broj2, ...ostatakListe] = brojevi;
+const [broj1, broj2, broj3, ...ostatakListe] = brojevi;
 
-console.log(broj1, broj2, ostatakListe);
+console.log(broj1, broj2, broj3, ostatakListe);
 
 const [num1, , , num4] = brojevi;
 

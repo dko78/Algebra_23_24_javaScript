@@ -91,7 +91,7 @@ const osoba = {
   godRodjenja: 1994,
   zanimanje: "Poštar",
   prijatelji: ["Luka", "Matija", "Marko"],
-  vozackaDozvola: true,
+  vozackaDozvola: !true,
   starost: function () {
     this.dob = 2024 - this.godRodjenja;
     return this.dob;
@@ -109,7 +109,7 @@ const osoba = {
     console.log(this.ime, "se odlogirao");
   },
 };
-
+console.log(osoba);
 console.log(osoba.provjera());
 
 // dot notacijom računamo return funkcije starost
