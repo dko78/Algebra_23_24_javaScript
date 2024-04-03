@@ -10,3 +10,5 @@ console.log(document.body.innerText);
 
 //nije read only moze i ovako
 document.body.innerHTML = "<h1>Hello World</h1>";
+
+document.getElementById("header").innerHTML = "<h1>Hello World</h1>";
