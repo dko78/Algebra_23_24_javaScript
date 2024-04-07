@@ -1,1 +1,106 @@
+"use strict";
+
+/*
+Zadatak 1
+Imamo listu ljudi. Iz te liste koristeći map metodu prođite kroz sve članove liste, kreirajte za svakog od
+njih karticu (div element) koji će sadržavati vrijednosti polja „name“ i „age“ iz liste.
+Tu map metodu pozovi koristeći Event listener koji koristi click event. Taj click event složi na neki HTML
+element koji kreirate po volji u vašem HTML fileu.
+*/
+
+let data = [
+  {
+    name: "Marko",
+    age: "30",
+  },
+  {
+    name: "Luka",
+    age: "32",
+  },
+  {
+    name: "Ivan",
+    age: "24",
+  },
+  {
+    name: "Stjepan",
+    age: "33",
+  },
+  {
+    name: "Domagoj",
+    age: "22",
+  },
+  {
+    name: "Kristijan",
+    age: "25",
+  },
+];
+
+const listaLjudi = document.createElement("div");
+
+listaLjudi.className = "lista-Ljudi";
+
+listaLjudi.innerText = "Ovo je iz JS ljudi";
+
+//console.log(listaLjudi);
+
+//apend
+
+document.querySelector("p").appendChild(listaLjudi);
+
+data.forEach((element) => {
+  const listaLjudi1 = document.createElement("div");
+  listaLjudi1.id = `${element.name}`;
+  listaLjudi1.className = "person";
+  listaLjudi1.innerText = `${element.name}`;
+  //listaLjudi1.listaLjudi1.innerText = `${element.age}`;
+  document.body.appendChild(listaLjudi1);
+
+  const listaLjudi2 = document.createElement("div");
+  listaLjudi2.id = `${element.age}`;
+  listaLjudi2.className = "age";
+  listaLjudi2.innerText = `${element.age}`;
+  //listaLjudi1.listaLjudi1.innerText = `${element.age}`;
+  document.body.appendChild(listaLjudi2);
+  //console.log(listaLjudi1);
+  //console.log(`${element.name}`);
+});
+
+const cars = "Saab,Volvo,BMW,GMC,Nissan,Ford".split(",");
+for (var c in cars) {
+  var newElement = document.createElement("div");
+  newElement.id = cars[c];
+  newElement.className = "car";
+  newElement.innerHTML = cars[c];
+  document.body.appendChild(newElement);
+}
+
+/*
+const div1 = document.createElement("div");
+div1.setAttribute = "name";
+div1.innerText = "Marko";
+div1.setAttribute = "age";
+div1.innerText = "30";
+document.querySelector("p").appendChild(div1);
+*/
+/*
+const div1 = document.createElement("div");
+div1.setAttribute = "name";
+div1.innerText = "Marko";
+//document.querySelector(".listaLjudi")
+
+const li1 = document.querySelector(".listaLjudi");
+console.log(li1);
+*/
+/*
+data.forEach((element) => {
+  const divElement = document.createElement("div");
+  divElement.setAttribute("name", `${element.name}`);
+  divElement.setAttribute("age", `${element.age}`);
+
+  //console.log(element.name, element.age);
+  console.log(divElement);
+});
+
+console.log(listaLjudi);
+*/
 
