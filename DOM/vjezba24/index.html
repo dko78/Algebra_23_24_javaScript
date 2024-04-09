@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+      integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="naslov">Lista zadataka</h1>
+      <h2>Pointer events</h2>
+    </header>
+    <form id="zadatak-forma">
+      <div class="form-control">
+        <input
+          type="text"
+          class="form-input"
+          id="zadatak-input"
+          name="zadatak"
+          placeholder="Unesi zadatak"
+        />
+      </div>
+      <div class="form-control">
+        <button type="submit" class="btn"><i class="fa-solid fa-plus"></i> Dodaj zadatak</button>
+      </div>
+    </form>
+
+    <div class="filter">
+      <input type="text" class="form-input-filter" id="filter" placeholder="Filter" />
+    </div>
+
+    <ul id="zadatak-list" class="zadatak">
+      <li class="pojedinacni-zadatak">
+        Kupi kruh i mlijeko
+        <button class="ukloni-zadatak btn-link">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
+      <li class="pojedinacni-zadatak">
+        Odvedi djecu u vrtić
+        <button class="ukloni-zadatak btn-link">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
+      <li class="pojedinacni-zadatak">
+        Popravi bravu
+        <button class="ukloni-zadatak btn-link">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
+      <li class="pojedinacni-zadatak">
+        Prošeći psa
+        <button class="ukloni-zadatak btn-link">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
+    </ul>
+
+    <button id="clear" class="btn-clear">Pobriši sve zadatke</button>
+  </body>
+</html>
