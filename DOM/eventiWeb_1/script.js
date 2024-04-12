@@ -3,6 +3,8 @@
 const granparent = document.querySelector(".grandparent");
 const parent = document.querySelector(".parent");
 const child = document.querySelector(".child");
+
+const divs = document.querySelectorAll("div");
 /*
 granparent.addEventListener(
   "click",
@@ -22,7 +24,7 @@ parent.addEventListener(
   "click",
   (e) => {
     //console.log(e.target);
-    //e.stopPropagation();
+
     console.log("Parent Capture");
   },
   { capture: true }
@@ -61,37 +63,51 @@ document.addEventListener("click", (e) => {
   //console.log(e.target);
   console.log("document Bubble");
 });
-
 */
 
+//2. remove eventListner
+/*
 granparent.addEventListener("click", (e) => {
   //console.log(e.target);
   console.log("Grandparent Bubble");
 });
 
-/*
-parent.addEventListener(
-  "click",
-  (e) => {
-    //console.log(e.target);
-    console.log("Parent Bubble");
-  
-  },
-  { once: true }
-);
-*/
 parent.addEventListener("click", printHi);
 
 setTimeout(() => {
-  parent.removeEventListener("click", printHi);
-});
+  parent.removeEventListener("click", printHi); //mora biti funkcija, ne mozes samo kod kopirati. isto tako kao gore
+}, 2000);
 
 child.addEventListener("click", (e) => {
   //console.log(e.target);
   console.log("child Bubble");
-  //e.stopPropagation();
 });
 
 function printHi() {
   console.log("Hi");
 }
+*/
+
+//3. Delegate element
+
+//divs.forEach((div) => {
+//  div.addEventListener("click", () => {
+//    console.log("HI");
+//  });
+//});
+
+addGlobalEnentListener("click", "div", (e) => {
+  console.log("Hi");
+});
+
+function addGlobalEnentListener(type, selector, callback) {
+  document.addEventListener(type, (e) => {
+    if (e.target.matches(selector)) callback(e);
+  });
+}
+
+const newDiv = document.createElement("div");
+newDiv.style.width = "200px";
+newDiv.style.height = "200px";
+newDiv.style.backgroundColor = "yellow";
+document.body.append(newDiv);
