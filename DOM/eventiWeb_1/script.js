@@ -96,11 +96,11 @@ function printHi() {
 //  });
 //});
 
-addGlobalEnentListener("click", "div", (e) => {
+addGlobalEvnentListener("click", "div", (e) => {
   console.log("Hi");
 });
 
-function addGlobalEnentListener(type, selector, callback) {
+function addGlobalEvnentListener(type, selector, callback) {
   document.addEventListener(type, (e) => {
     if (e.target.matches(selector)) callback(e);
   });
