@@ -30,10 +30,20 @@ console.log(treceDijete);
 
 console.log(treceDijete.parentElement.children); //vraća html kolekciju
 
+//vraća html kolekciju
 //We have to convert the HTMLCollection to an array to be able to use the Array.indexOf() method.
 //You can also use the spread syntax (...) to convert the collection of elements to an array.
 
 const indexSpread = [...child3.parentElement.children].indexOf(child3);
+
+const htmlKolekcija = document.getElementsByTagName("p");
+
+const list1 = Array.from(htmlKolekcija);
+console.log(list1);
+
+console.log("Drugi nacin:", list1[2]);
+console.log("Child3:", list1.indexOf(child3));
+//console.log("Child 1:", list1.indexOf("Child 1"));
 
 console.log(indexSpread); // 👉️ 2
 //moze i ovako

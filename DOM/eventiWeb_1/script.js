@@ -5,6 +5,11 @@ const parent = document.querySelector(".parent");
 const child = document.querySelector(".child");
 
 const divs = document.querySelectorAll("div");
+console.log("divs", divs);
+
+const divs2 = document.getElementsByTagName("div");
+
+console.log("divs2", divs2);
 /*
 granparent.addEventListener(
   "click",

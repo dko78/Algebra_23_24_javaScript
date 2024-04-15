@@ -2,7 +2,7 @@
 
 //izvor: https://www.freecodecamp.org/news/dom-manipulation-htmlcollection-vs-nodelist/
 /*
-const paragraphs = document.getElementsByClassName("paragraph");
+/--
 console.log(paragraphs);//retutn HTML COLLECTION
 
 const paragraphs2 = document.querySelectorAll(".paragraph");
