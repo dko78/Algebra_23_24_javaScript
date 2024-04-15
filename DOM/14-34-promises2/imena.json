@@ -1,0 +1,19 @@
+[
+  {
+    "ime": "Marko",
+    "prezime": "Markić",
+    "dob": 30
+  },
+
+  {
+    "ime": "Pero",
+    "prezime": "Perić",
+    "dob": 57
+  },
+
+  {
+    "ime": "Maja",
+    "prezime": "Majić",
+    "dob": 22
+  }
+]

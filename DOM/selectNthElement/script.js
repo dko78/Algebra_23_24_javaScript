@@ -1,4 +1,6 @@
 "use strict";
+
+//sa weba neki izvor https://www.javascripttutorial.net/javascript-dom/javascript-get-child-element/
 /*
 //prvi html
 const parent = document.getElementById("parent");
