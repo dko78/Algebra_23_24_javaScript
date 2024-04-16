@@ -52,3 +52,30 @@ console.log(indexSpread); // 👉️ 2
 const index = Array.from(child3.parentElement.children).indexOf(child3);
 
 console.log(index);
+
+/*
+  kod za index2
+  
+let content = document.getElementById("menu");
+let firstChild = content.firstChild.nodeName;
+console.log(firstChild);
+
+console.log(document.getElementById("menu").firstElementChild);
+
+console.log(document.getElementById("menu").firstElementChild.textContent);
+
+//! naslov liste
+console.log(content.childNodes);
+console.log("Prvi znakovi: ", content.childNodes[0].textContent);
+
+//zadnji Child
+console.log(document.getElementById("menu").lastElementChild.textContent);
+
+//get all child element
+
+let menu = document.getElementById("menu");
+let children = menu.children;
+console.log(children);
+
+
+*/
