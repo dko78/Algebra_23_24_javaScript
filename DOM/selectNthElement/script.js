@@ -25,7 +25,7 @@ const svakiDrugi = document.querySelectorAll("#parent :nth-child(2n)");
 console.log(svakiDrugi);
 */
 
-const treceDijete = document.getElementById("child3");
+const treceDijete = document.querySelector(".child3");
 console.log(treceDijete);
 
 //moze  ovako
