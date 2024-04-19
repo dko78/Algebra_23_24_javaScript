@@ -1,0 +1,17 @@
+[
+  {
+    "ime": "Marko",
+    "prezime": "Markić",
+    "godina": 30
+  },
+  {
+    "ime": "Jura",
+    "prezime": "Jurić",
+    "godina": 35
+  },
+  {
+    "ime": "Maja",
+    "prezime": "Majić",
+    "godina": 40
+  }
+]
