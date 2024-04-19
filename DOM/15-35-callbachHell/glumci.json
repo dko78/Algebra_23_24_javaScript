@@ -1,44 +1,14 @@
 [
-    {
-      "naslov": "Scarface",
-      "premijera": "1983"
-    },
-    {
-      "naslov": "The Godfather",
-      "premijera": "1972"
-    },
-    {
-      "naslov": "Goodfellas",
-      "premijera": "1990"
-    }
-  ]
-   8:38 PM
-  Katarina Sokolić: robert de niro 8:40 PM
-  *Lecturer: Igor Jevremović: [
-    {
-      "ime": "Al Pacino",
-      "god_rod": "1940"
-    },
-    {
-      "ime": "Joe Pesci",
-      "god_rod": "1943"
-    },
-    {
-      "ime": "Robert De Niro",
-      "god_rod": "1944"
-    }
-  ] 8:40 PM
-  *Lecturer: Igor Jevremović: [
-    {
-      "ime": "Martin Scorsese",
-      "god-rod": "1942"
-    },
-    {
-      "ime": "Brian De Palma",
-      "god-rod": "1940"
-    },
-    {
-      "ime": "Francis Coppola",
-      "god-rod": "1940"
-    }
-  ] 8:
+  {
+    "ime": "Al Pacino",
+    "god_rod": "1940"
+  },
+  {
+    "ime": "Joe Pesci",
+    "god_rod": "1943"
+  },
+  {
+    "ime": "Robert De Niro",
+    "god_rod": "1944"
+  }
+]
