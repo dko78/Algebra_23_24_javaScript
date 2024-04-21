@@ -14,7 +14,7 @@ console.log(jsonFile);
 //parse metodom pretvaramo json format nazad u objekt
 const objectFile = JSON.parse(jsonFile);
 
-console.log(objectFile.id);
+console.log(objectFile.naslov);
 
 //asinkroni kod
 

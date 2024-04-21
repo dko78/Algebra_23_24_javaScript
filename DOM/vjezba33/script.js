@@ -48,7 +48,11 @@ objekt završio sa resolve ili reject...
 dohvatiUsera
   .then((osoba) => console.log(`${osoba.ime} ${osoba.prezime} je tu...`))
   .catch((error) => console.log(error))
-  .finally(() => console.log("Finally ne zanima da li je resolve ili reject, on se bude izvršio"));
+  .finally(() =>
+    console.log(
+      "Finally ne zanima da li je resolve ili reject, on se bude izvršio"
+    )
+  );
 
 // PRAKTIČAN PRIMJER - primjer sa callbackom kako smo već radili...
 
