@@ -6,7 +6,7 @@
     Nakon toga sa .then metodom mozemo definirati što će se dogoditi u oba slučaja
 
 */
-
+/*
 const obecanja = new Promise((resolve, reject) => {
   setTimeout(() => {
     console.log("Asink zadatak je završen");
@@ -39,10 +39,11 @@ const dohvatiUsera = new Promise((resolve, reject) => {
     }
   }, 1000);
 });
-
+*/
 /*
   prepiši!--vjezba 33
 */
+/*
 dohvatiUsera
   .then((osoba) => console.log(`${osoba.ime} je tu... `)) //tu definiraš ako je resolves
   .catch((error) => console.log(error))
@@ -51,7 +52,7 @@ dohvatiUsera
       "Finally ne zanima da lije resolve ili reject, on se bude izvršio"
     )
   );
-
+*/
 //praktičan primjer
 /*
 const imena = [
@@ -96,36 +97,22 @@ kreirajIme({ ime: "Ana" }, getImena);
 */
 //primjer isto to sa PROMISE
 const imena = [
-  {
-    ime: "Marko",
-    prezime: "Markić",
-    dob: 30,
-  },
-
-  {
-    ime: "Pero",
-    prezime: "Perić",
-    dob: 57,
-  },
-
-  {
-    ime: "Maja",
-    prezime: "Majić",
-    dob: 22,
-  },
+  { ime: "Marija", prezime: "Marić" },
+  { ime: "Iva", prezime: "Ivić" },
 ];
-//promjena je tu
+
 const kreirajIme = (ime) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       let greska = false;
+
       if (!greska) {
         imena.push(ime);
         resolve();
       } else {
-        reject("nešto je pošlo po krivu....");
+        reject("Nešto je pošlo po krivu...");
       }
-    }, 1000);
+    }, 100);
   });
 };
 
@@ -133,17 +120,16 @@ const getImena = () => {
   setTimeout(() => {
     imena.forEach((osoba) => {
       const div = document.createElement("div");
-      div.innerHTML = `<p>${osoba.ime}</p>`;
+      div.innerHTML = `<p>${osoba.ime} ${osoba.prezime}</p>`;
       document.getElementById("imena").appendChild(div);
     });
   }, 1000);
 };
 
-//kreirajIme({ ime: "Ana" }.then(getImena));
 const pokaziGresku = (error) => {
   const p = document.createElement("p");
   p.innerHTML = `<strong>${error}</strong>`;
   document.getElementById("imena").appendChild(p);
 };
 
-kreirajIme({ ime: "Ana" }.then(getImena).catch(pokaziGresku));
+//kreirajIme({ ime: "Ana", prezime: "Anić" }.then(getImena).catch(pokaziGresku));

@@ -1,7 +1,34 @@
 "use strict";
+/*
 
-const apiUrl = "https://jsonplaceholder.typicode.com/todos?_limit=10";
+The fully-qualified URL must have the following format:
 
+https://itunes.apple.com/search?parameterkeyvalue
+
+Where parameterkeyvalue can be one or more parameter key and value pairs indicating the details of your query.
+
+To construct a parameter key and value pair, you must concatenate each parameter key with an equal sign (=) and a value string. For example: key1=value1. To create a string of parameter key and value pairs, you must concatenate each pair using an ampersand (&). For example:
+
+key1=value1&key2=value2&key3=value3
+
+Note: When creating search fields and scripts for your website, you should use dynamic script tags for your xmlhttp script call requests. For example:
+
+<script src="https://.../search?parameterkeyvalue&callback="{name of JavaScript function in webpage}"/>
+
+*/
+
+const apiUrl = "https://itunes.apple.com/search?term=indie&entity=song";
+const jachJohnsonApiURL =
+  "https://itunes.apple.com/search?term=jack+johnson&entity=musicVideo";
+
+fetch(jachJohnsonApiURL)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => `ERROR: ${error}`);
+
+/*
 const getTodos = () => {
   fetch(apiUrl)
     .then((res) => res.json())
@@ -82,3 +109,4 @@ const updateTodo = (id, completed) => {
 document.addEventListener("DOMContentLoaded", getTodos);
 document.getElementById("todo-form").addEventListener("submit", createTodo);
 document.getElementById("todo-list").addEventListener("click", toggleCompleted);
+*/

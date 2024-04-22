@@ -1,15 +1,17 @@
 "use strict";
+"use strict";
 
 document.getElementById("povuci_txt").addEventListener("click", povuciTekst);
 
 function povuciTekst() {
   fetch("./uzorak.txt")
     .then((res) => res.text())
-    .then((data) => (document.getElementById("ispis").innerHTML = data));
+    .then((data) => {
+      document.querySelector("#ispisi").innerHTML = data; // Ispis fetcha unutar div elementa sa id-em "ispisi".
+    })
+    .catch((error) => console.log(error));
 }
-//document.getElementById("ispis").innerHtml = data ;
 
-//zadaća isto ovo lokalno sa fetchom sa adrese
 document.getElementById("lokalni_json").addEventListener("click", povuciJson);
 
 function povuciJson() {
