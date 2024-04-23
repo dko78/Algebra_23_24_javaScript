@@ -2,13 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parcijalni API</title>
-    <script src="script.js" defer></script>
-
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>iTunes API</title>
   </head>
   <body>
     <h1>iTunes API</h1>
+    <div class="search-wrapper">
+      <label for="search">Pretraži iTunes</label>
+      <input type="search" id="search" data-search placeholder="Traži" />
+    </div>
+
+    <div class="user-cards" data-user-cards-container></div>
+    <template data-user-template>
+      <div class="card">
+        <div class="header" data-header></div>
+        <div class="body" data-body></div>
+      </div>
+    </template>
   </body>
 </html>

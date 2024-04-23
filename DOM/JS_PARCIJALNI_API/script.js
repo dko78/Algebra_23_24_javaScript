@@ -1,112 +1,86 @@
 "use strict";
-/*
 
-The fully-qualified URL must have the following format:
+//https://jsonplaceholder.typicode.com/users
 
-https://itunes.apple.com/search?parameterkeyvalue
+const urlTodo = "https://jsonplaceholder.typicode.com/users";
 
-Where parameterkeyvalue can be one or more parameter key and value pairs indicating the details of your query.
+const searchInput = document.querySelector("[data-search]");
 
-To construct a parameter key and value pair, you must concatenate each parameter key with an equal sign (=) and a value string. For example: key1=value1. To create a string of parameter key and value pairs, you must concatenate each pair using an ampersand (&). For example:
+const userCardTemplate = document.querySelector("[data-user-template]");
 
-key1=value1&key2=value2&key3=value3
+const userCardContainer = document.querySelector("[data-user-cards-container]");
 
-Note: When creating search fields and scripts for your website, you should use dynamic script tags for your xmlhttp script call requests. For example:
+let users = [];
 
-<script src="https://.../search?parameterkeyvalue&callback="{name of JavaScript function in webpage}"/>
-
-*/
-
-const apiUrl = "https://itunes.apple.com/search?term=indie&entity=song";
-const jachJohnsonApiURL =
+const url =
   "https://itunes.apple.com/search?term=jack+johnson&entity=musicVideo";
 
-fetch(jachJohnsonApiURL)
+//primjer web simpified
+fetch(urlTodo)
   .then((response) => response.json())
   .then((data) => {
+<<<<<<< HEAD
     console.log("OK");
+=======
+    data.forEach((user) => {
+      const card = userCardTemplate.content.cloneNode(true).children[0];
+      const header = card.querySelector("[data-header]");
+      const body = card.querySelector("[data-body]");
+      header.textContent = user.name;
+      body.textContent = user.email;
+      console.log(card);
+      userCardContainer.append(card);
+    });
+    s;
+>>>>>>> 153d9d3504848e0f850cdf0ea21d9aa9697ce416
   })
-  .catch((error) => `ERROR: ${error}`);
+  .catch((error) => {
+    console.log(`ERROR: ${error}`);
+  });
+
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value;
+});
 
 /*
-const getTodos = () => {
-  fetch(apiUrl)
-    .then((res) => res.json())
+function searchiTunes(term) {
+  const url = `https://itunes.apple.com/search?term=${term}&media=music&entity=song`;
+
+  fetch(url)
+    .then((response) => response.json())
     .then((data) => {
-      data.forEach((todo) => noviTodo(todo));
+      // Handle the response data here
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(`ERROR: ${error}`);
     });
-};
+}
 
-const noviTodo = (todo) => {
-  const div = document.createElement("div");
-  div.classList.add("todo");
-  div.appendChild(document.createTextNode(todo.title));
-  div.setAttribute("data-id", todo.id);
+searchiTunes("Taylor Swift");
+console.log("el radi");
+*/
+//2
+/*
+function searchiTunes2(term) {
+  const url =
+    "https://itunes.apple.com/search?term=jack+johnson&entity=musicVideo";
 
-  let trashIcon = document.createElement("i");
-  trashIcon.className = "fa-solid fa-trash";
-  trashIcon.addEventListener("click", deleteTodo);
-  div.appendChild(trashIcon);
-
-  if (todo.completed) {
-    div.classList.add("gotov");
-  }
-
-  document.getElementById("todo-list").appendChild(div);
-};
-
-const deleteTodo = () => {
-  console.log("bok");
-};
-
-const createTodo = (e) => {
-  e.preventDefault();
-
-  const input = e.target.firstElementChild;
-  const noviTodoNaslov = input.value.trim();
-  if (noviTodoNaslov === "") {
-    alert("Molimo unesite novi zadatak");
-    return;
-  }
-
-  const dodajTodo = {
-    title: noviTodoNaslov,
-    completed: false,
-  };
-
-  fetch(apiUrl, {
-    method: "POST",
-    body: JSON.stringify(dodajTodo),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => res.json())
+  fetch(url)
+    .then((response) => response.json())
     .then((data) => {
-      input.value = "";
-      noviTodo(data);
+      const artistCard = artistCardTemplate.content.cloneNode(true).children[0];
+      console.log(data);
+      // Handle the response data here
+    })
+    .catch((error) => {
+      console.log(`ERROR: ${error}`);
     });
-};
-
-const toggleCompleted = (e) => {
-  if (e.target.classList.contains("todo")) {
-    e.target.classList.toggle("gotov");
-  }
-
-  updateTodo(e.target.dataset.id, e.target.classList.contains("gotov"));
-};
-
-const updateTodo = (id, completed) => {
-  fetch(`${apiUrl}/${id}`, {
-    method: "PUT",
-    body: JSON.stringify({ completed }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-};
-
-document.addEventListener("DOMContentLoaded", getTodos);
-document.getElementById("todo-form").addEventListener("submit", createTodo);
-document.getElementById("todo-list").addEventListener("click", toggleCompleted);
+}
+*/
+/*
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value;
+  console.log(value);
+});
 */
