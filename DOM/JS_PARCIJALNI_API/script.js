@@ -19,9 +19,6 @@ const url =
 fetch(urlTodo)
   .then((response) => response.json())
   .then((data) => {
-<<<<<<< HEAD
-    console.log("OK");
-=======
     data.forEach((user) => {
       const card = userCardTemplate.content.cloneNode(true).children[0];
       const header = card.querySelector("[data-header]");
@@ -32,7 +29,6 @@ fetch(urlTodo)
       userCardContainer.append(card);
     });
     s;
->>>>>>> 153d9d3504848e0f850cdf0ea21d9aa9697ce416
   })
   .catch((error) => {
     console.log(`ERROR: ${error}`);
