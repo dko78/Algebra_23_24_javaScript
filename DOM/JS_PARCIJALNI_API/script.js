@@ -37,7 +37,6 @@ fetch(urlTodo)
 searchInput.addEventListener("input", (e) => {
   const value = e.target.value;
 });
-
 /*
 function searchiTunes(term) {
   const url = `https://itunes.apple.com/search?term=${term}&media=music&entity=song`;
