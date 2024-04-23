@@ -24,7 +24,7 @@ const jachJohnsonApiURL =
 fetch(jachJohnsonApiURL)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
+    console.log("OK");
   })
   .catch((error) => `ERROR: ${error}`);
 
