@@ -11,8 +11,18 @@
   <body>
     <h1>iTunes API</h1>
     <div class="search-wrapper">
-      <label for="search">Pretraži iTunes</label>
-      <input type="search" id="search" data-search placeholder="Traži" />
+      <label for="search">Search Artist</label>
+      <input type="search" id="search" data-search />
     </div>
+
+    <div class="user-cards" data-user-cards-container></div>
+    <template data-user-template>
+      <div class="card">
+        <div class="header" data-header></div>
+        <div class="body" data-body></div>
+      </div>
+    </template>
+  </body>
+
   </body>
 </html>
