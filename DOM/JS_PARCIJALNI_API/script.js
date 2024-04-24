@@ -1,13 +1,27 @@
 "use strict";
 
+const userCardTemplate = document.querySelector("[data-user-template]");
+
+const userCardContainer = document.querySelector("[data-user-cards-container]");
+
 function searchiTunes(term) {
   const url = `https://itunes.apple.com/search?term=${term}&media=music&entity=song`;
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      // Handle the response data here
-      console.log(data);
+      //console.log(data);
+      //artistName i trackName
+      //console.log(data.results);
+      data.results.forEach((user) => {
+        const card = userCardTemplate.content.cloneNode(true).children[0];
+        const header = card.querySelector("[data-header]");
+        const body = card.querySelector("[data-body]");
+        header.textContent = user.artistName;
+        body.textContent = user.trackName;
+        //append
+        userCardContainer.append(card);
+      });
     })
     .catch((error) => {
       console.log(`ERROR: ${error}`);
