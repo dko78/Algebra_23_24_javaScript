@@ -8,6 +8,20 @@ input {
   font-size: 1rem;
 }
 
+button {
+  margin-top: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #444;
+}
+
 .user-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -33,4 +47,3 @@ input {
 .hide {
   display: none;
 }
-
