@@ -108,20 +108,3 @@ document.querySelectorAll(".klikovi").forEach((e) => {
     brojKlikova(event.target);
   });
 });
-
-/********************** */
-
-function covjek(ime) {
-  function pozdrav() {
-    console.log(`Pozz, ja sam ${ime}`);
-  }
-  function kakoSI() {
-    console.log(`Kako se osjećaš ${ime}`);
-  }
-  return { pozdrav, kakoSI };
-}
-
-const osoba2 = covjek("igor");
-const osoba3 = covjek("mario");
-
-console.log(osoba1, osoba2);
