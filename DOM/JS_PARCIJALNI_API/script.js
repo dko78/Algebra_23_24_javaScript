@@ -10,65 +10,34 @@ const resultCount = document.querySelector(".resultCount");
 
 const searchInput = document.querySelector("[data-search]");
 
-const btnPretrazi = document.querySelector(".btnSearch");
-const btnObrisiListu = document.querySelector(".btnClear");
-
 let artistCollection = [];
 
-/* ovo radi samo display start
-function searchiTunes(term) {
-  const url = `https://itunes.apple.com/search?term=${term}&media=music&entity=song`;
+function searchiTunes(term, limit) {
+  const url = `https://itunes.apple.com/search?term=${term}&media=music&entity=song&limit=${limit}`;
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      //console.log(data);
-      resultCount.textContent = `Rezultata: ${data.resultCount}`;
-      //artistName i trackName
       //console.log(data.results);
-      data.results.forEach((user) => {
+      //resultCount.textContent = `Rezultata: ${data.resultCount}`;
+      artistCollection = data.results.map((artist) => {
+        // console.log(artist.artistName, artist.trackName);
         const card = userCardTemplate.content.cloneNode(true).children[0];
         const header = card.querySelector("[data-header]");
         const body = card.querySelector("[data-body]");
-        header.textContent = user.artistName;
-        body.textContent = user.trackName;
-        //append
+        header.textContent = artist.artistName;
+        body.textContent = artist.trackName;
         userCardContainer.append(card);
+        return {
+          name: artist.artistName,
+          track: artist.trackName,
+          element: card,
+        };
       });
-    })
-    .catch((error) => {
-      console.log(`ERROR: ${error}`);
-    });
-} 
 
-searchiTunes("Metallica");
-end ovo radi samo display start*/
-/*
-searchInput.addEventListener("input", (e) => {
-  const value = e.target.value.toLowerCase();
-  searchiTunes(value);
-  console.log(value);
-  console.log(artistCollection);
-  artistCollection.forEach((user) => {
-    const isVisible =
-      //user.artistName.toLowerCase().includes(value) || //neka greška mi je u toLowerCase mozda jer nije tekst ne znam
-      //user.trackName.toLowerCase().includes(value);
-      user.artistName.includes(value) || user.trackName.includes(value);
-    user.element.classList.toggle("hide", !isVisible);
-  });
-});
-*/
-function searchiTunes(term) {
-  const url = `https://itunes.apple.com/search?term=${term}&media=music&entity=song`;
-  // const url = `https://itunes.apple.com/search?term=${term}&media=music&entity=song&limit=25`;
-
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      //console.log(data);
-      resultCount.textContent = `Rezultata: ${data.resultCount}`;
       //artistName i trackName
       //console.log(data.results);
+      /*
       artistCollection = data.results.map((user) => {
         const card = userCardTemplate.content.cloneNode(true).children[0];
         const header = card.querySelector("[data-header]");
@@ -78,6 +47,7 @@ function searchiTunes(term) {
         userCardContainer.append(card);
         return { name: user.name, email: user.email, element: card };
       });
+      */
     })
     .catch((error) => {
       console.log(`ERROR: ${error}`);
@@ -88,35 +58,29 @@ function searchiTunes(term) {
     });
 }
 
-//searchiTunes("Metallica");
-
-btnObrisiListu.addEventListener("click", function () {
-  userCardContainer.style.display = "none";
-  searchInput.value = "";
-  resultCount.textContent = 0;
-});
+//searchiTunes("Metallica", 10);
 
 function provjeraInputa() {
   if (searchInput.value === "") {
     alert("Upišite vrijednost");
   }
+  searchInput.focus();
 }
 
-btnPretrazi.addEventListener("click", function () {
-  //dohvat sa inputa
-  //obriši trenutne rezultate
-  //userCardContainer.classList.toggle("hide");
-  provjeraInputa();
-  const value = searchInput.value;
-  console.log(`Tražim ${value}`);
-  searchiTunes(value);
-});
-
-searchInput.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    // simulate a button click to trigger the search
-    btnPretrazi.click();
-  }
-});
-
 console.log("el radi");
+
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value;
+  searchiTunes(value, 10);
+  console.log(artistCollection);
+  //console.log(artistCollection);
+  //artistCollection.forEach((user) => {
+  /*
+    const isVisible =
+      user.artistName.includes(value) || user.trackName.includes(value);
+    user.element.classList.toggle("hide", !isVisible);
+    
+  
+  });
+  */
+});
