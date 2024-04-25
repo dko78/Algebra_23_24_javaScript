@@ -11,14 +11,9 @@ const resultCount = document.querySelector(".resultCount");
 const searchInput = document.querySelector("[data-search]");
 
 const btnPretrazi = document.querySelector(".btnSearch");
+const btnObrisiListu = document.querySelector(".btnClear");
 
 let artistCollection = [];
-
-function addGlobalEnentListener(type, selector, callback) {
-  document.addEventListener(type, (e) => {
-    if (e.target.matches(selector)) callback(e);
-  });
-}
 
 /* ovo radi samo display start
 function searchiTunes(term) {
@@ -65,12 +60,13 @@ searchInput.addEventListener("input", (e) => {
 */
 function searchiTunes(term) {
   const url = `https://itunes.apple.com/search?term=${term}&media=music&entity=song`;
+  // const url = `https://itunes.apple.com/search?term=${term}&media=music&entity=song&limit=25`;
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       //console.log(data);
-      //resultCount.textContent = `Rezultata: ${data.resultCount}`;
+      resultCount.textContent = `Rezultata: ${data.resultCount}`;
       //artistName i trackName
       //console.log(data.results);
       artistCollection = data.results.map((user) => {
@@ -85,13 +81,32 @@ function searchiTunes(term) {
     })
     .catch((error) => {
       console.log(`ERROR: ${error}`);
+    })
+    .finally(() => {
+      //resultCount.textContent = "END";
+      console.log("END");
     });
 }
 
 //searchiTunes("Metallica");
 
+btnObrisiListu.addEventListener("click", function () {
+  userCardContainer.style.display = "none";
+  searchInput.value = "";
+  resultCount.textContent = 0;
+});
+
+function provjeraInputa() {
+  if (searchInput.value === "") {
+    alert("Upišite vrijednost");
+  }
+}
+
 btnPretrazi.addEventListener("click", function () {
   //dohvat sa inputa
+  //obriši trenutne rezultate
+  //userCardContainer.classList.toggle("hide");
+  provjeraInputa();
   const value = searchInput.value;
   console.log(`Tražim ${value}`);
   searchiTunes(value);
