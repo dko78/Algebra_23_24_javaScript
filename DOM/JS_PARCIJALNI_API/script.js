@@ -56,7 +56,7 @@ searchInput.addEventListener("input", (e) => {
   console.log(artistCollection);
   artistCollection.forEach((user) => {
     const isVisible =
-      //user.artistName.toLowerCase().includes(value) || //neka gre�ka mi je u toLowerCase mozda jer nije tekst ne znam
+      //user.artistName.toLowerCase().includes(value) || //neka greška mi je u toLowerCase mozda jer nije tekst ne znam
       //user.trackName.toLowerCase().includes(value);
       user.artistName.includes(value) || user.trackName.includes(value);
     user.element.classList.toggle("hide", !isVisible);
