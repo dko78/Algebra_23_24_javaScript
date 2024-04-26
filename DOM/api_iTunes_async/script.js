@@ -62,22 +62,3 @@ function displayErrors(message) {
   searchInput.value = "";
   searchInput.focus();
 }
-
-/*
-
-
-function displayUsers(data) {
-  userCardContainer.textContent = "";
-  //dobiješ objekt pa koristi Object Destructuring
-  const { name: imeUser, email: emailUser } = data;
-  const card = userCardTemplate.content.cloneNode(true).children[0];
-  const header = card.querySelector("[data-header]");
-  const body = card.querySelector("[data-body]");
-  header.textContent = imeUser;
-  body.textContent = emailUser;
-  //append
-  userCardContainer.append(card);
-}
-
-
-*/
