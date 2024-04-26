@@ -29,9 +29,12 @@ artistForm.addEventListener("submit", async (e) => {
   const value = searchInput.value;
   if (value) {
     try {
+      document.body.style.cursor = "wait";
       const artistData = await getArtist(value);
       displayArtist(artistData);
+      document.body.style.cursor = "default";
     } catch (error) {
+      document.body.style.cursor = "default";
       console.error(error);
       displayErrors(error);
     }
@@ -43,7 +46,7 @@ artistForm.addEventListener("submit", async (e) => {
 function displayArtist(data) {
   artistCardContainer.textContent = "";
 
-  data.results.forEach((artist) => {    
+  data.results.forEach((artist) => {
     const card = artistCardTemplate.content.cloneNode(true).children[0];
     const header = card.querySelector("[data-header]");
     const body = card.querySelector("[data-body]");
@@ -53,6 +56,7 @@ function displayArtist(data) {
     artistCardContainer.append(card);
   });
 }
+
 
 function displayErrors(message) {
   // const errorDisplay = document.createElement("p");
