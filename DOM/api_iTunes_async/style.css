@@ -1,0 +1,69 @@
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  input {
+    font-size: 1rem;
+  }
+  
+  button {
+    margin-top: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #444;
+  }
+  
+  .artist-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.25rem;
+    margin-top: 1rem;
+  }
+  
+  .card {
+    border: 1px solid black;
+    background-color: aliceblue;
+    padding: 0.5rem;
+  }
+  
+  .card > .header {
+    margin-bottom: 0.25rem;
+  }
+  
+  .card > .body {
+    font-size: 0.8rem;
+    color: #777;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  #artist-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  #artist-list > div {
+    border: 1px #666 solid;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .artist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
