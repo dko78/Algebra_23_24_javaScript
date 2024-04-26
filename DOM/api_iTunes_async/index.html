@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>iTunes API</title>
+  </head>
+  <body>
+    <header>
+      <h1>iTunes API</h1>
+      <div>
+        <img src="./Media/iTunes_logo.png" alt="iTunes Logo" width="150"  > 
+      </div>
+      <form class="artistForm">
+        <div class="search-wrapper">
+            <label for="search">Upišite pretragu</label>
+            <input type="search" id="search"  data-search placeholder="Upišite izvođača" />
+            <div>
+                <button type="submit" class="btnSearch">Pretraži</button>
+             </div>
+        </div>
+        <div>
+      </form>
+    </header>
+    <hr>
+    <div class="artist-cards" data-artist-cards-container></div>
+    <template data-artist-template>
+      <div class="card">
+        <div class="header" data-header></div>
+        <div class="body" data-body></div>
+      </div>
+    </template>
+  
+    
+  </body>
+
+  </body>
+</html>
