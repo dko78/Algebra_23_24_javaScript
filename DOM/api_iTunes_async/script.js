@@ -15,6 +15,7 @@ async function getArtist(term) {
   const url = `https://itunes.apple.com/search?term=${term}&limit=50`;
   console.log("Parsani URL: ", url);
   const response = await fetch(url);
+  console.log("response: ", response);
   if (!response.ok) {
     throw new Error("Nisam mogao dohvatiti podake");
   }
@@ -45,7 +46,11 @@ artistForm.addEventListener("submit", async (e) => {
 
 function displayArtist(data) {
   artistCardContainer.textContent = "";
+  console.log("polje", data.results.length);
+  if (data.results.length === 0){
+    displayErrors("API nije vratio ništa")
 
+  }
   data.results.forEach((artist) => {
     const card = artistCardTemplate.content.cloneNode(true).children[0];
     const header = card.querySelector("[data-header]");
@@ -56,7 +61,6 @@ function displayArtist(data) {
     artistCardContainer.append(card);
   });
 }
-
 
 function displayErrors(message) {
   // const errorDisplay = document.createElement("p");
