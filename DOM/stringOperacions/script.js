@@ -13,7 +13,7 @@ edt1.addEventListener("input", (e) => {
 });
 */
 btn1.addEventListener("click", (e) => {
-  lbl1.textContent = tekstSaPlusevima(edt1.value);
+  lbl1.textContent = tekstSaPlusevima(edt1.value.trim()).toLowerCase();
   edt1.value = "";
 });
 
@@ -36,4 +36,3 @@ function tekstSaPlusevima(tekst) {
   */
   return lista;
 }
-
