@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <script id="pokemon-list" type="text/x-handlebars-template">
+      <table>
+        <tr>
+          <th>#</th>
+          <th>Ime</th>
+        </tr>
+        {{#each pokemon}}
+          <tr>
+            <td>{{@index}}</td>
+            <td><a href="{{this.url}}">{{this.name}}</a></td>
+          </tr>
+        {{/each}}
+      </table>
+    </script>
+    <div class="result"></div>
+  </body>
+</html>
