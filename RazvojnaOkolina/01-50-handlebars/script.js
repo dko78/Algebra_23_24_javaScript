@@ -11,4 +11,6 @@ fetch("https://pokeapi.co/api/v2/pokemon-color/yellow")
     const html = template(context);
     document.getElementById("result").innerHTML = html;
   })
-  .catch((error) => console.log("error", error));
+  .catch((error) => {
+    console.log("error", error);
+  });
