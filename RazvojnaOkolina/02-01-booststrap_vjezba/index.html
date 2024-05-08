@@ -15,14 +15,31 @@
       crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="boostrap-breaikpoints.css" />
-    <title>Boostrap vježba form</title>
+    <title>Boostrap bježba</title>
   </head>
   <body>
     <div class="container">
-      <label for="email" class="form-label">e-mail</label>
-      <input type="email" class="form-control" id="email"></input>     
-      <button>Submit</button>
-    </form>
+      <!--container-fluid, uvijek je 100% ekrna-->
+      <!--BITNO JE da je sve u kontainereu u redu-rowu, pa dalje u kolonama-->
+      <div class="row row-cols-2 gy-2 gx-1">
+        <!--g-3 znači x i y-->
+        <!--<div class="col-lg-4 col-8">-->
+        <div class="col">
+          <div class="box">tekst</div>
+        </div>
+        <div class="col">
+          <div class="box"></div>
+        </div>
+        <div class="col">
+          <div class="box"></div>
+        </div>
+        <div class="col">
+          <div class="box"></div>
+        </div>
+        <div class="col">
+          <div class="box"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
