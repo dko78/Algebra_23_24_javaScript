@@ -93,9 +93,16 @@ function updateKlik() {
   let button;
 
   function reportKlik(klik) {
+     /*
+    console.log("klik.id= ", klik.id);
     button = klik.id;
     klikovi[button] = klikovi[button] + 1 || 1;
     console.log(button, klikovi);
+    */
+    console.log(klik); //klik je u biti target, cijeli butnon tag(ovjekt) koji si kliknuo
+    klikovi[klik.id] = klikovi[klik.id] + 1 || 1;
+    console.log(klik.id, klikovi);
+    
   }
 
   return reportKlik;
