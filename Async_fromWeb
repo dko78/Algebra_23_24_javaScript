@@ -44,3 +44,95 @@ order(2000, () => {
   .finally(() =>
     console.log("finnaly se izvršava na kon svega i promisa i catch")
   );
+
+/*...............................................ovo je pravi asyn wait                                              */
+
+let stocks = {
+  fruits: ["jabuka", "banana", "jagoda"],
+  liquid: ["voda", "led"],
+  holder: ["zdjelica", "kornet"],
+  topings: ["čokolada"]
+};
+
+is_shop_open = true;
+
+//new promise
+/*
+let toppingsChoice = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(console.log("Koji premaz kume?"));
+    }, 2000);
+  });
+};
+*/
+//new promise
+
+function time(ms) {
+  return new Promise((resolve, reject) => {
+    if (is_shop_open) {
+      setTimeout(resolve, ms);
+    } else {
+      reject(console.log("SHop je zatvoren!."));
+    }
+  });
+}
+
+async function kitchen() {
+  try {
+    await time(2000);
+    console.log(`${stocks.fruits[0]}`);
+
+    await time(0);
+    console.log("Počinejm proizvodnju");
+
+    await time(2000);
+    console.log("Režem voće");
+
+    await time(1000);
+    console.log("Voda i drugo");
+    
+    
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("dan gotov, zarva");
+  }
+}
+
+kitchen();
+
+//ovo je samo primjer pr1
+/* pr1 start
+async function kitchen() {
+  console.log("A");
+  console.log("B");
+  console.log("C");
+  await toppingsChoice();
+  console.log("D");
+  console.log("E");
+}
+
+kitchen();
+
+console.log("Perem suđe");
+console.log("Spremam stolove");
+console.log("Spremam suđe");
+*/ //pr1 kraj
+
+/*
+async function order() {
+  try {
+    await abc; //points to fake fuction
+  } catch (error) {
+    console.log("abc ne postoji", error);
+  } finally {
+    console.log("runs code in finally.");
+  }
+}
+
+order().then(() => {
+  console.log("Opa");
+});
+*/
+
