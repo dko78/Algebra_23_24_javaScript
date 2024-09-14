@@ -1,0 +1,46 @@
+let stocks = {
+  fruits: ["jabuka", "banana", "jagoda"],
+  liquid: ["voda", "led"],
+  holder: ["zdjelica", "kornet"],
+  topings: ["čokolada"]
+};
+
+is_shop_open = false;
+
+let order = (time, work) => {
+  return new Promise((resolve, reject) => {
+    if (is_shop_open) {
+      setTimeout(() => {
+        resolve(work());
+      }, time);
+    } else {
+      reject(console.log("zatvorena radnja!"));
+    }
+  });
+};
+
+order(2000, () => {
+  console.log(`${stocks.fruits[1]} je odabran.`);
+})
+  .then(() => {
+    return order(0, () => {
+      console.log("počela proizvodnja.");
+    });
+  })
+  .then(() => {
+    return order(2000, () => {
+      console.log("Počeo rezati voće");
+    });
+  })
+  .then(() => {
+    return order(2000, () => {
+      console.log("Izrezao voće");
+    });
+  })
+  /*ovaj catch dio ide na reject znači preskače ove .then-ove i ide ovdje*/
+  .catch(() => {
+    console.log("Kupac otišao - promise rejected");
+  })
+  .finally(() =>
+    console.log("finnaly se izvršava na kon svega i promisa i catch")
+  );
