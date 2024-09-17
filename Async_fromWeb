@@ -136,3 +136,39 @@ order().then(() => {
 });
 */
 
+//acync wait 3
+
+function fun1(){
+  return new Promise ((resolve, reject)=>{
+    setTimeout(()=>{
+      resolve('Good data')
+    }, 100)
+  })
+};
+
+
+function fun2(){
+  console.log('fun2')
+  return new Promise ((resolve, reject)=>{
+    setTimeout(()=>{
+      reject('OK2')
+    }, 100)
+  })
+};
+
+
+function onSuccess(data){
+  console.log(`Success ${data}`)
+};
+
+function onError(errorCode){
+  console.error(`Error ${errorCode}`)
+};
+
+
+fun1()
+.then (fun2)
+.then (onSuccess)
+.catch (onError)
+
+
